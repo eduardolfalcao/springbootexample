@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>FarmaciaAPP</title>
+</head>
+<body>
+	<h1>Lista de Remedios</h1>
+
+	<h3><a href="/cadastrarRemedio">Cadastrar remédio</a></h3>
+
+	<div th:each="remedio : ${remedios}">
+		<div class="row">
+			<p> <span th:text="${remedio.nome}"></span></p>
+			<p> <span th:text="${remedio.marca}"></span></p>
+			<p> <span th:text="${remedio.bula}"></span></p>
+			<p> <span th:text="${remedio.posologia}"></span></p>
+			<p> <span th:text="${remedio.lote}"></span></p>
+			<p> <span th:text="${remedio.vencimento}"></span></p>
+			<p> <span th:text="${remedio.estoque}"></span></p>
+		</div>	
+	</div>
+</body>
+</html>
+
+
+
+
