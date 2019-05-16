@@ -3,23 +3,68 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <title>FarmaciaAPP</title>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"
+	media="screen,projection" />
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 	<h1>Lista de Remedios</h1>
 
-	<h3><a href="/cadastrarRemedio">Cadastrar remédio</a></h3>
+	<h3>
+		<!-- <a href="/cadastrarRemedio">Cadastrar remédio</a>-->
+		<a href="/cadastrarRemedio" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Cadastrar remédio</a>
+	</h3>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Marca</th>
+				<th>Bula</th>
+				<th>Posologia</th>
+				<th>Lote</th>
+				<th>Vencimento</th>
+				<th>Estoque</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="remedio : ${remedios}">
+			
+				<td>
+					<span th:text="${remedio.nome}"></span>
+				</td>
+				<td>
+					<span th:text="${remedio.marca}"></span>
+				</td>
+				<td>
+					<span th:text="${remedio.bula}"></span>
+				</td>
+				<td>
+					<span th:text="${remedio.posologia}"></span>
+				</td>
+				<td>
+					<span th:text="${remedio.lote}"></span>
+				</td>
+				<td>
+					<span th:text="${remedio.vencimento}"></span>
+				</td>
+				<td>
+					<span th:text="${remedio.estoque}"></span>
+				</td>
+			</tr>		
+		</tbody>
+	</table>	
 
-	<div th:each="remedio : ${remedios}">
-		<div class="row">
-			<p> <span th:text="${remedio.nome}"></span></p>
-			<p> <span th:text="${remedio.marca}"></span></p>
-			<p> <span th:text="${remedio.bula}"></span></p>
-			<p> <span th:text="${remedio.posologia}"></span></p>
-			<p> <span th:text="${remedio.lote}"></span></p>
-			<p> <span th:text="${remedio.vencimento}"></span></p>
-			<p> <span th:text="${remedio.estoque}"></span></p>
-		</div>	
-	</div>
+	
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </html>
 
